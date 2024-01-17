@@ -8,8 +8,8 @@ grant create warehouse on account to role taxi_data_admin;
 grant role taxi_data_admin to role accountadmin;
 
 use role taxi_data_admin;
-create database if not exists de_launchpad;
-use database de_launchpad;
+create database if not exists new_york_taxi_data_project;
+use database new_york_taxi_data_project;
 create schema if not exists raw_taxi_data;
 
 -- create the storage integration
@@ -20,7 +20,7 @@ create or replace storage integration gcs_taxi
   storage_allowed_locations = ('gcs://new-york-taxi-tlc-public/');
 
 -- create the external stage in the raw_taxi_data schema
-use database de_launchpad;
+use database new_york_taxi_data_project;
 
 use schema raw_taxi_data;
 

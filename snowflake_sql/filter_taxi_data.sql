@@ -1,5 +1,5 @@
 use role taxi_data_admin;
-use database de_launchpad;
+use database new_york_taxi_data_project;
 use schema raw_taxi_data;
 use warehouse launchpad_xs;
 
