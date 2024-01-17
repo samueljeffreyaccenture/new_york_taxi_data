@@ -44,6 +44,25 @@ and total_amount > 0;
 -- read filtered table
 select * from filtered_taxi_data_jul_to_sep limit 10;
 
+
+-- create table for daily taxi journey data
+create or replace table daily_taxi_data(
+    journey_date date,
+    number_of_journeys number,
+    average_distance_miles float,
+    average_duration_minutes float,
+    average_tip_percentage float,
+    average_speed_mph float
+);
+
+insert into daily_taxi_data(
+    journey_date,
+    number_of_journeys,
+    average_distance_miles,
+    average_duration_minutes,
+    average_tip_percentage,
+    average_speed_mph
+)
 select
     distinct cast(pickup_datetime as date) as journey_date,
     count(*) as number_of_journeys,
